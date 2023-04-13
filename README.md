@@ -4,6 +4,10 @@ This project provides GPT-Plus subscribers the ability to use their GPT-4 in pyt
 
 ## .env setup
 (NOTE: You need a subscription to GPT-Plus to use "gpt-4", otherwise you can use "text-davinci-002-render-sha" (default 3.5), or "text-davinci-002-render-paid" (legacy 3.5))
+
+### Create .env file in the root directory with the following content inside (to be filled):
+        OPENAI_API_KEY=
+        _PUID=
 - go to https://chat.openai.com/chat
 - inspect the website
 - go to application tab
