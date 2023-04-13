@@ -13,3 +13,22 @@ This project provides GPT-Plus subscribers the ability to use their GPT-4 in pyt
 - locate `Fetch/XHR`
 - refresh the page and locate `models` then locate `authorization` under `Headers`
 - copy the value of the `authorization` (don't copy Bearer) (this is for `OPENAI_API_KEY` in .env)
+
+## Usage:
+
+### Installation:
+- `pip install CustomGPT`
+
+### Importing:
+- `from CustomGPT import CustomGPT`
+
+## Usage Example:
+        from CustomGPT import CustomGPT
+        
+        if __name__ == "__main__":
+   
+          gpt = CustomGPT().start_new_chat()
+        
+          # getting help with .env:
+
+          gpt = CustomGPT().help()
