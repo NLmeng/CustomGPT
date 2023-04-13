@@ -107,7 +107,6 @@ class CustomGPT:
                 "key": "value",
             },
         )
-        # Check if '_puid' exists in the response cookies
         if "_puid" in res.cookies:
             self.session.cookies.set("_puid", res.cookies["_puid"])
         else:
