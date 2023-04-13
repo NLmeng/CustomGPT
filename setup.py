@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="CustomGPT",
-    version="0.1.6",
+    version="1.0.0",
     description="A package for interacting with GPT-4 models (and older) without using the OpenAI API.",
     author="Lymeng Naret",
     author_email="lymengnaret@yahoo.com",
