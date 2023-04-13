@@ -8,15 +8,23 @@ load_dotenv()
 
 class CustomGPT:
     """
-    A Python class for interacting with GPT-4 models using the OpenAI API.
+    A Python class for interacting with GPT-4 models without using the OpenAI API.
 
     :param model: The model to use for generating the response
-    :type model: str, e.g. "gpt-4", "text-davinci-003", "text-davinci-002", ...
+    :type model: str, e.g. "gpt-4", "text-davinci-002-render-sha", "text-davinci-002-render-paid", ...
+
+    If you are having trouble setting up the .env, please refer to the README.md file, or use .help():
 
     EXAMPLE USAGE:
+
     if __name__ == "__main__":
-        gpt = CustomGPT()
-        session = gpt.start_new_chat()
+    
+        gpt = CustomGPT().start_new_chat()
+
+    ""  getting help with .env:  ""
+
+        gpt = CustomGPT().help()
+
     """
 
     def __init__(self, model="gpt-4"):
@@ -54,6 +62,7 @@ class CustomGPT:
         )
         filtered_data = self.filter_response(res)
 
+        print("Chat has started successfully with model " + self.model + "\nType 'exit' to exit the chat.")
         while True:
             user_input = input("> ")
             if user_input.lower() == "exit":
@@ -124,3 +133,14 @@ class CustomGPT:
         data = non_mt_res.splitlines()[len(non_mt_res.splitlines()) - 2]
         filtered_data = json.loads(data[data.find("data: ") + 6:])
         return filtered_data
+    
+    def help(self):
+        print("- go to https://chat.openai.com/chat")
+        print("- inspect the website")
+        print("- go to application tab")
+        print("- locate `Cookies` then locate the `https://chat.openai.com` tab under it")
+        print("- copy the value of _puid (this is for `_PUID` in `.env`)")
+        print("- go to network tab")
+        print("- locate `Fetch/XHR`")
+        print("- refresh the page and locate `models` then locate `authorization` under `Headers`")
+        print("- copy the value of the `authorization` (don't copy Bearer) (this is for `OPENAI_API_KEY` in .env)")
