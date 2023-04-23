@@ -1,5 +1,7 @@
 # CustomGPT
 
+## This current implementation has deprecated because of security updates.
+
 This project provides GPT-Plus subscribers the ability to use their GPT-4 in python without having access to GPT-4's API. It provides a class that substitute the actual API; it will essentially use https://chat.openai.com/chat in the background. This also supports the usage of older versions of GPT, this way you don't have to pay for the openai-API usage or wait for the API's waitlist.
 
 ## .env setup
